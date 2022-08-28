@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.26.1",
+    "eslint": "^8.23.0",
+    "typescript": "^4.8.2"
+  },
+  "eslintConfig": {
+    "extends": "@antfu",
+    "rules": {
+      "no-undef": "off"
+    }
+  }
+}
