@@ -24,6 +24,7 @@
     .bpx-player-electric-wrap,
     .bpx-player-cmd-dm-inside,
     .vcd,
+    #bannerAd,
     #right-bottom-banner,
     #activity_vote,
     #live_recommand_report {
