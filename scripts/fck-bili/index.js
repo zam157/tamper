@@ -2,7 +2,7 @@
 // @name         霹雳霹雳去广告 + 去hover弹幕弹窗
 // @license MIT
 // @namespace    zam157.pilifukker
-// @version      0.4
+// @version      0.5
 // @description  Fuck pilipili
 // @author       Zam157
 // @run-at       document-start
@@ -23,6 +23,7 @@
     .bilibili-player-dm-tip-wrap,
     .bpx-player-electric-wrap,
     .bpx-player-cmd-dm-inside,
+    .vcd,
     #right-bottom-banner,
     #activity_vote,
     #live_recommand_report {
