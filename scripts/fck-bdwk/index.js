@@ -2,7 +2,7 @@
 // @name         Fuck BD Wenku
 // @license MIT
 // @namespace    zam157.bdwenkufukker
-// @version      0.1
+// @version      0.2
 // @run-at       document-start
 // @description  Fuck Baidu Wenku!
 // @author       Zam157
@@ -84,8 +84,17 @@
       _pageData = newVal
     },
     get() {
-      if (_pageData?.vipInfo?.isVip === false)
+      if (_pageData?.vipInfo?.isVip === false) {
+        _pageData.vipInfo.isWenkuVip = 1
         _pageData.vipInfo.isVip = 1
+        _pageData.vipInfo.isSuperVip = 1
+        _pageData.vipInfo.leftDay = 999
+        _pageData.readerInfo.interceptPage = _pageData.readerInfo.page
+        _pageData.readerInfo.goOnReadAction = 1
+        _pageData.readerInfo.copyUnlimited = 1
+        _pageData.readerInfo.showPage = _pageData.readerInfo.page
+        _pageData.mixVipAndUserInfo.userInfo.isAdmin = 1
+      }
       return _pageData
     },
   })

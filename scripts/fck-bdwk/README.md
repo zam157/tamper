@@ -1,12 +1,15 @@
+### 特别注意
+由于百度文库修复了普通用户也能获取到剩余页内容的鉴权BUG，所以全文浏览内容的功能已失效
+
 一个**简单**的**百度文库提取文字**脚本
 
 ### 功能介绍
-- 提取文字（F12呼出控制台输入`console.log(getDocContent())`后回车就能获取文本，翻到底才能导出所有的内容）
-- 破解本地VIP（能够全文浏览内容，但不能下载文档）（inspired by [@王子周棋洛](https://www.bilibili.com/video/BV1xP411j7t8)）
+- 提取文字（F12呼出控制台输入`console.log(getDocContent())`后回车就能获取文本，只能获取有权限看到的内容）
+- 破解本地VIP（~~能够全文浏览内容~~（百度已经修复所以此功能失效），但不能下载文档）（inspired by [@王子周棋洛](https://www.bilibili.com/video/BV1xP411j7t8)）
+- 默认展开剩余页数，没有权限查看也展开，会提示加载错误
 
 ### 兼容性
 **不考虑**兼容性，请使用各大主流浏览器的最新版本
 
-
-#### 附：实现原理很简单，代码不到百行，有兴趣的朋友可以查看源码，欢迎提供代码修改的帮助（PR welcome但是懒得建Github仓库
+#### 附：实现原理很简单，代码不到百行，有兴趣的朋友可以查看源码，[PR welcome](https://github.com/zam157/tamper/tree/master/scripts/fck-bdwk)
 #### 附2：懒得写界面所以请自己手动console.log想要的结果吧（逃
