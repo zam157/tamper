@@ -30,7 +30,7 @@
     #live_recommand_report {
       display: none!important;
     }
- 
+
     .bili-header__bar.mini-header,
     .reply-box.fixed-box,
     .comment-send-lite {
