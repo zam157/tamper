@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Fck Twitter
-// @license MIT
+// @license      MIT
 // @namespace    zam157.fck-twit
 // @version      0.1
 // @run-at       document-start
 // @description  F**k twitter!
 // @author       Zam157
-// @description 2023/4/30 04:56:15
+// @homepageURL  https://github.com/zam157/tamper/tree/master/scripts/fck-twit
+// @supportURL   https://github.com/zam157/tamper/tree/master/scripts/fck-twit
+// @match        https://twitter.com/**
 // ==/UserScript==
 
 (() => {
