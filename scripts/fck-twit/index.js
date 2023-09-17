@@ -2,7 +2,7 @@
 // @name         Fck Twitter
 // @license      MIT
 // @namespace    zam157.fck-twit
-// @version      0.1
+// @version      0.1.1
 // @run-at       document-start
 // @description  F**k twitter!
 // @author       Zam157
@@ -40,7 +40,7 @@
 
   XMLHttpRequest.prototype.open = new Proxy(XMLHttpRequest.prototype.open, {
     apply(target, thisArg, args) {
-      if (args[1].includes('HomeLatestTimeline')) {
+      if (/HomeTimeline|HomeLatestTimeline/.test(args[1])) {
         injectXHRResponse(thisArg, 'response')
         injectXHRResponse(thisArg, 'responseText')
       }
