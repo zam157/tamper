@@ -1,14 +1,15 @@
 // ==UserScript==
-// @name        Fck 知识星球
-// @namespace   zam157.fck-zsxq
-// @match       *://*.zsxq.com/*
+// @name         Fck 知识星球
+// @license      MIT
+// @namespace    zam157.fck-zsxq
+// @match        *://*.zsxq.com/*
 // @grant        GM_addStyle
-// @run-at      document-start
-// @version     0.1.0
-// @author      Zam157
+// @run-at       document-start
+// @version      0.1.0
+// @author       Zam157
 // @homepageURL  https://github.com/zam157/tamper/tree/master/scripts/fck-zsxq
 // @supportURL   https://github.com/zam157/tamper/tree/master/scripts/fck-zsxq
-// @description 知识星球去水印、可复制
+// @description  知识星球去水印、可复制
 // ==/UserScript==
 
 (function () {
