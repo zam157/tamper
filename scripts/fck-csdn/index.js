@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name        去nm的CSDN
+// @description CSDN纯享版
 // @license     MIT
 // @namespace   zam157.csdnfucker
 // @match       https://blog.csdn.net/*
