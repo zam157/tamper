@@ -2,12 +2,13 @@
 // @name         霹雳霹雳去广告 + 去hover弹幕弹窗
 // @license MIT
 // @namespace    zam157.pilifukker
-// @version      0.5
+// @version      0.6
 // @description  Fuck pilipili
 // @author       Zam157
 // @run-at       document-start
 // @match        https://www.bilibili.com/video/*
 // @match        https://www.bilibili.com/bangumi/play/*
+// @match        https://www.bilibili.com/list/watchlater*
 // @icon         https://static.hdslb.com/images/favicon.ico
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -26,7 +27,6 @@
     .vcd,
     #bannerAd,
     #right-bottom-banner,
-    #activity_vote,
     #live_recommand_report {
       display: none!important;
     }
