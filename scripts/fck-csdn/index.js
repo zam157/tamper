@@ -6,8 +6,10 @@
 // @match       https://blog.csdn.net/*
 // @grant       GM_addStyle
 // @run-at      document-start
-// @version     0.0.1
+// @version     0.0.2
 // @author      Zam157
+// @homepageURL  https://github.com/zam157/tamper/tree/master/scripts/fck-csdn
+// @supportURL   https://github.com/zam157/tamper/tree/master/scripts/fck-csdn
 // ==/UserScript==
 
 (function () {
@@ -25,6 +27,9 @@
     .passport-login-container,
     .article-info-box,
     .blog-footer-bottom,
+    .hide-article-box,
+    .sidecolumn-deepseek,
+    .rightside-fixed-hide,
     a[data-type="app"],
     a[data-type="cs"],
     #blogColumnPayAdvert,
@@ -32,7 +37,13 @@
       display: none!important;
     }
     .nodata .container main {
-        width: 100%;
+      width: 100%;
+    }
+    .article_content {
+      height: auto!important;
+    }
+    .d-flex.kind_person {
+      display: none!important;
     }
   `
   GM_addStyle(styles)
