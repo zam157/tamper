@@ -6,7 +6,7 @@
 // @match       https://blog.csdn.net/*
 // @grant       GM_addStyle
 // @run-at      document-start
-// @version     0.0.2
+// @version     0.0.3
 // @author      Zam157
 // @homepageURL  https://github.com/zam157/tamper/tree/master/scripts/fck-csdn
 // @supportURL   https://github.com/zam157/tamper/tree/master/scripts/fck-csdn
@@ -50,13 +50,26 @@
 
   // 改写addEventListener，禁止注册copy事件
   const originalAEL = EventTarget.prototype.addEventListener
-  EventTarget.prototype.addEventListener = function (...arg) {
-    if (arg?.[0] === 'copy') {
-      // console.log(arg)
-      // 成功劫持到目标事件后将addEventListener还原
-      // EventTarget.prototype.addEventListener = originalAEL
+  EventTarget.prototype.addEventListener = function (...aelArgs) {
+    // #region 禁止禁止复制
+    if (aelArgs[0] === 'copy') {
       return
     }
-    originalAEL.apply(this, arg)
+    // #endregion
+
+    // #region 禁止点击中转
+    if (aelArgs[0] === 'click' && this.id === 'content_views') {
+      function injectFn(...listenerArgs) {
+        const e = listenerArgs[0]
+        if (e.target.tagName === 'A')
+          return
+        aelArgs[1].apply(this, listenerArgs)
+      }
+      originalAEL.apply(this, [aelArgs[0], injectFn, aelArgs[2]])
+      return
+    }
+    // #endregion
+
+    originalAEL.apply(this, aelArgs)
   }
 })()
