@@ -2,7 +2,7 @@
 // @name         霹雳霹雳去广告 + 去hover弹幕弹窗
 // @license MIT
 // @namespace    zam157.pilifukker
-// @version      0.6
+// @version      0.7
 // @description  Fuck pilipili
 // @author       Zam157
 // @run-at       document-start
@@ -17,6 +17,7 @@
   'use strict'
 
   const css = `
+    .act-now,
     .bilibili-player-electric-panel,
     .bilibili-player-ending-panel,
     .video-page-special-card,
@@ -40,12 +41,39 @@
   `
   GM_addStyle(css)
 
+  function inject(target, fnName, cb) {
+    const originalFn = target[fnName]
+    target[fnName] = function (...args) {
+      return cb(originalFn.bind(this), args)
+    }
+  }
+
   // 改写addEventListener，禁止目标元素的mousemove事件
-  const originalAEL = EventTarget.prototype.addEventListener
-  EventTarget.prototype.addEventListener = function (...arg) {
-    if (arg?.[0] === 'mousemove' && arg[1]?.name === '' && this?.className?.includes?.('bpx-player-video-area'))
+  inject(EventTarget.prototype, 'addEventListener', (original, args) => {
+    const [type, listener, options] = args
+    if (type === 'mousemove' && listener?.name === '' && options?.className?.includes?.('bpx-player-video-area'))
       return
 
-    originalAEL.apply(this, arg)
-  }
+    return original(...args)
+  })
+
+  // 劫持评论脚本，添加ip显示
+  inject(HTMLHeadElement.prototype, 'appendChild', (originalFn, args) => {
+    const [node] = args
+    if (node.tagName === 'SCRIPT' && node.src.includes('/commentpc/bili-comments')) {
+      (async () => {
+        let code = await (await fetch(node.src)).text()
+        code = code.replace(`<div id="pubdate">','</div>`, `<div id="pubdate">','</div><div id="ip-location">','</div>`)
+        code = code.replace(`this.pubDate,this.handleLike,`, `this.pubDate,(this.data && this.data.reply_control)?this.data.reply_control.location:null,this.handleLike,`)
+        node.type = 'text/javascript'
+        node.textContent = code
+        node.removeAttribute('src')
+        originalFn(node)
+        node.dispatchEvent(new Event('load', { bubbles: true }))
+      })()
+
+      return
+    }
+    return originalFn(...args)
+  })
 })()
