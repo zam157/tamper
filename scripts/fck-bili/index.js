@@ -2,7 +2,7 @@
 // @name         霹雳霹雳去广告 + 去hover弹幕弹窗
 // @license MIT
 // @namespace    zam157.pilifukker
-// @version      0.7
+// @version      0.8
 // @description  Fuck pilipili
 // @author       Zam157
 // @run-at       document-start
@@ -44,17 +44,17 @@
   function inject(target, fnName, cb) {
     const originalFn = target[fnName]
     target[fnName] = function (...args) {
-      return cb(originalFn.bind(this), args)
+      cb.call(this, originalFn.bind(this), args)
     }
   }
 
   // 改写addEventListener，禁止目标元素的mousemove事件
-  inject(EventTarget.prototype, 'addEventListener', (original, args) => {
-    const [type, listener, options] = args
-    if (type === 'mousemove' && listener?.name === '' && options?.className?.includes?.('bpx-player-video-area'))
+  inject(EventTarget.prototype, 'addEventListener', function (originalFn, args) {
+    const [type, listener] = args
+    if (type === 'mousemove' && listener?.name === '' && this?.className?.includes?.('bpx-player-video-area'))
       return
 
-    return original(...args)
+    return originalFn(...args)
   })
 
   // 劫持评论脚本，添加ip显示
