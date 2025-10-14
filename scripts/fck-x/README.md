@@ -1,3 +1,3 @@
-# Fck Twitter
+# Fck X
 
-Inject xhr response to remove `promoted-tweet`s
+remove promoted tweets
