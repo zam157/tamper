@@ -1,9 +1,8 @@
-一个 **简单** 的B站视频页 ~~F*cker~~ 去hover弹幕弹窗和去广告的[脚本](https://github.com/zam157/tamper/tree/master/scripts/fck-bili)
+# [去nm的哔哩哔哩](https://github.com/zam157/tamper/tree/master/scripts/fck-bili)
 
 ### 功能介绍
 - 去hover弹幕弹窗：在看B站视频时如果把鼠标悬浮到某条弹幕上这条弹幕会暂停移动并且弹出一个悬浮窗，这个行为很碍眼也很没必要（明明可以直接暂停然后右键弹幕来实现相同的操作）！！！
-- 去广告（其实去广告是顺带的，我的初衷只是想禁掉烦人hover弹幕弹窗）：去掉了一些活动广告、推荐视频、视频结束后的充电列表遮罩以及投票三连弹窗等
-- 美化：给顶栏和底部评论栏加上毛玻璃特效
+- 去广告：去掉了一些活动广告、推荐视频、视频结束后的充电列表遮罩等
 - 显示评论IP地址, 只支持新版评论. 借鉴了[B站评论区开盒](https://greasyfork.org/zh-CN/scripts/448434-b%E7%AB%99%E8%AF%84%E8%AE%BA%E5%8C%BA%E5%BC%80%E7%9B%92)
 
 ### 兼容性
