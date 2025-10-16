@@ -2,7 +2,7 @@
 // @name         去nm的哔哩哔哩
 // @license      MIT
 // @namespace    zam157.pilifukker
-// @version      0.9
+// @version      0.10
 // @description  Fuck pilipili
 // @author       Zam157
 // @run-at       document-start
@@ -10,6 +10,7 @@
 // @match        https://www.bilibili.com/bangumi/play/*
 // @match        https://www.bilibili.com/list/watchlater*
 // @match        https://www.bilibili.com/opus/*
+// @match        https://t.bilibili.com*
 // @icon         https://static.hdslb.com/images/favicon.ico
 // @grant        GM_addStyle
 // ==/UserScript==
