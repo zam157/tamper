@@ -6,7 +6,7 @@
 // @match       https://blog.csdn.net/*
 // @grant       GM_addStyle
 // @run-at      document-start
-// @version     0.0.3
+// @version     0.0.4
 // @author      Zam157
 // @homepageURL  https://github.com/zam157/tamper/tree/master/scripts/fck-csdn
 // @supportURL   https://github.com/zam157/tamper/tree/master/scripts/fck-csdn
@@ -15,37 +15,54 @@
 (function () {
   'use strict'
   const styles = `
-    * {
-      user-select: auto!important;
-    }
-    .passport-login-tip-container,
-    .article-search-tip,
-    .hljs-button,
-    .blog_container_aside,
-    .more-toolbar,
-    .recommend-box,
-    .passport-login-container,
-    .article-info-box,
-    .blog-footer-bottom,
-    .hide-article-box,
-    .sidecolumn-deepseek,
-    .rightside-fixed-hide,
-    a[data-type="app"],
-    a[data-type="cs"],
-    #blogColumnPayAdvert,
-    #toolbarBox {
-      display: none!important;
-    }
-    .nodata .container main {
-      width: 100%;
-    }
-    .article_content {
-      height: auto!important;
-    }
-    .d-flex.kind_person {
-      display: none!important;
-    }
-  `
+* {
+  user-select: auto!important;
+}
+.passport-login-tip-container,
+.article-search-tip,
+.hljs-button,
+.blog_container_aside,
+.more-toolbar,
+.recommend-box,
+.passport-login-container,
+.article-info-box,
+.blog-footer-bottom,
+.hide-article-box,
+.sidecolumn-deepseek,
+.rightside-fixed-hide,
+.runner-box,
+.recommend-right,
+.opt-box,
+#creatActivityHref,
+main div.blog-content-box pre.new-version button.btn-code-notes,
+main div.blog-content-box pre.new-version div.hljs-button,
+.sidecolumn-vip,
+a[data-type="app"],
+a[data-type="cs"],
+#blogHuaweiyunAdvert,
+#blogColumnPayAdvert,
+#toolbarBox {
+  display: none!important;
+}
+.nodata .container main {
+  width: 100%;
+}
+.article_content {
+  height: auto!important;
+}
+.d-flex.kind_person {
+  display: none!important;
+}
+.container {
+  margin-right: 0!important;
+}
+main div.blog-content-box pre.new-version {
+  padding-top: 0!important;
+}
+main div.blog-content-box pre.new-version.prettyprint .pre-numbering {
+  top: 0!important;
+}
+`
   GM_addStyle(styles)
 
   // 改写addEventListener，禁止注册copy事件
