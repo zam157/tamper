@@ -2,15 +2,15 @@
 // @name         去nm的哔哩哔哩
 // @license      MIT
 // @namespace    zam157.pilifukker
-// @version      0.10
+// @version      0.11
 // @description  Fuck pilipili
 // @author       Zam157
 // @run-at       document-start
 // @match        https://www.bilibili.com/video/*
 // @match        https://www.bilibili.com/bangumi/play/*
-// @match        https://www.bilibili.com/list/watchlater*
+// @match        https://www.bilibili.com/list/watchlater/*
 // @match        https://www.bilibili.com/opus/*
-// @match        https://t.bilibili.com*
+// @match        https://t.bilibili.com/*
 // @icon         https://static.hdslb.com/images/favicon.ico
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -20,14 +20,19 @@
 
   const css = `
     .act-now,
+    .act-end,
     .bilibili-player-electric-panel,
     .bilibili-player-ending-panel,
     .video-page-special-card,
     .activity-m,
     .bilibili-player-dm-tip-wrap,
     .bpx-player-electric-wrap,
-    .bpx-player-cmd-dm-inside,
     .vcd,
+    .ad-report,
+    .strip-ad,
+    .video-page-special-card-small,
+    .video-page-game-card-small,
+    #slide_ad,
     #bannerAd,
     #right-bottom-banner,
     #live_recommand_report {
